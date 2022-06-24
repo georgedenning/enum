@@ -19,12 +19,7 @@
     "enumerable"
   ],
   "author": "George Denning <npmgden@gmail.com>",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://raw.githubusercontent.com/georgedenning/enum/main/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/georgedenning/enum/issues"
   },
