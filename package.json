@@ -1,5 +1,5 @@
 {
-  "name": "@georgehdenning/enum",
+  "name": "@gden/enum",
   "description": "Register the Enum package to handle predefined constants in your project",
   "version": "0.0.0",
   "private": false,

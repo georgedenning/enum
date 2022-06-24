@@ -1,12 +1,12 @@
-![NPM License](https://img.shields.io/npm/l/@georgehdenning/enums?label=)
-![NPM Downloads](https://img.shields.io/npm/dw/@georgehdenning/enums?label=)
+![NPM License](https://img.shields.io/npm/l/@georgedenning/enums?label=)
+![NPM Downloads](https://img.shields.io/npm/dw/@georgedenning/enums?label=)
 
 # Installation
 
 Install the package with npm:
 
 ```shell
-$ npm install @georgehdenning/enums
+$ npm install @gden/enums
 ```
 
 Start using Enums in your project:
@@ -14,13 +14,13 @@ Start using Enums in your project:
 ## ES6 Import
 
 ```js
-import Enum from '@georgehdenning/enums';
+import Enum from '@gden/enums';
 ```
 
 ## Common JS
 
 ```js
-const Enum = require('@georgehdenning/enums');
+const Enum = require('@gden/enums');
 ```
 
 ---
@@ -30,7 +30,7 @@ const Enum = require('@georgehdenning/enums');
 ```js
 // index.js
 
-import Enum from '@georgehdenning/enums';
+import Enum from '@gden/enums';
 
 const Colour = new Enum(['Green', 'Blue', 'Yellow']);
 
