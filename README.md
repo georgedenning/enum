@@ -1,5 +1,5 @@
-![NPM License](https://img.shields.io/npm/l/@georgedenning/enums?label=)
-![NPM Downloads](https://img.shields.io/npm/dw/@georgedenning/enums?label=)
+![NPM License](https://img.shields.io/npm/l/@gden/enums?label=)
+![NPM Downloads](https://img.shields.io/npm/dw/@gden/enums?label=)
 
 # Installation
 
