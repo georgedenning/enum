@@ -1,0 +1,1 @@
+{"version":3,"file":"isType.js","names":["type","value"],"sources":["../../../src/helpers/isType.js"],"sourcesContent":["export default (type, value) => {\n    return typeof value === type;\n};\n"],"mappings":";;;;;;;;;eAAe,kBAACA,IAAD,EAAOC,KAAP,EAAiB;EAC5B,OAAO,QAAOA,KAAP,MAAiBD,IAAxB;AACH,C"}

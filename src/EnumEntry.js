@@ -1,7 +1,7 @@
-import isObject from './helpers/isObject';
-import isNil from './helpers/isNil';
-import isString from './helpers/isString';
-import isNumber from './helpers/isNumber';
+import isObject from './helpers/isObject.js';
+import isNil from './helpers/isNil.js';
+import isString from './helpers/isString.js';
+import isNumber from './helpers/isNumber.js';
 
 export default class EnumEntry {
     static _defaultOptions = {

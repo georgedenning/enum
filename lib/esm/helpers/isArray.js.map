@@ -1,0 +1,1 @@
+{"version":3,"file":"isArray.js","names":["value","Array","isArray"],"sources":["../../../src/helpers/isArray.js"],"sourcesContent":["export default value => Array.isArray(value);\n"],"mappings":";;;;;;;eAAe,kBAAAA,KAAK;EAAA,OAAIC,KAAK,CAACC,OAAN,CAAcF,KAAd,CAAJ;AAAA,C"}

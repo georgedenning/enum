@@ -1,8 +1,6 @@
 module.exports = {
     verbose: true,
 
-    // bail: 1,
-
     testMatch: ['**/src/**/*.test.[jt]s?(x)'],
 
     moduleFileExtensions: ['js', 'json'],

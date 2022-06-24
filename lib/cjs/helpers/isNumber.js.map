@@ -1,0 +1,1 @@
+{"version":3,"file":"isNumber.js","names":["value","isType"],"sources":["../../../src/helpers/isNumber.js"],"sourcesContent":["import isType from './isType.js';\n\nexport default value => isType('number', value);\n"],"mappings":";;;;;;;AAAA;;;;eAEe,kBAAAA,KAAK;EAAA,OAAI,IAAAC,kBAAA,EAAO,QAAP,EAAiBD,KAAjB,CAAJ;AAAA,C"}

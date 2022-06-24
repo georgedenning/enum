@@ -1,0 +1,1 @@
+{"version":3,"file":"isUndefined.js","names":["value","undefined"],"sources":["../../../src/helpers/isUndefined.js"],"sourcesContent":["export default value => value === undefined;\n"],"mappings":";;;;;;;eAAe,kBAAAA,KAAK;EAAA,OAAIA,KAAK,KAAKC,SAAd;AAAA,C"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"isString.js","names":["value","isType"],"sources":["../../../src/helpers/isString.js"],"sourcesContent":["import isType from './isType.js';\n\nexport default value => isType('string', value);\n"],"mappings":";;;;;;;AAAA;;;;eAEe,kBAAAA,KAAK;EAAA,OAAI,IAAAC,eAAA,EAAO,QAAP,EAAiBD,KAAjB,CAAJ;AAAA,C"}

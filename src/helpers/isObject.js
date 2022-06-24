@@ -1,5 +1,5 @@
-import isType from './isType';
-import isArray from './isArray';
-import isNull from './isNull';
+import isType from './isType.js';
+import isArray from './isArray.js';
+import isNull from './isNull.js';
 
 export default value => isType('object', value) && !isArray(value) && !isNull(value);

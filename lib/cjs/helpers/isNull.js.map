@@ -1,0 +1,1 @@
+{"version":3,"file":"isNull.js","names":["value"],"sources":["../../../src/helpers/isNull.js"],"sourcesContent":["export default value => value === null;\n"],"mappings":";;;;;;;eAAe,kBAAAA,KAAK;EAAA,OAAIA,KAAK,KAAK,IAAd;AAAA,C"}

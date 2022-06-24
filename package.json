@@ -3,9 +3,33 @@
   "description": "Register the Enum package to handle predefined constants in your project",
   "version": "0.0.2",
   "scripts": {
-    "lint": "eslint .",
-    "test": "jest",
-    "clean": "rm -rf coverage && rm -rf tests/coverage && rm -rf dist/*.js*"
+    "test:lint": "eslint .",
+    "test:unit": "jest",
+    "test": "npm run test:lint && npm run test:unit",
+    "clean": "rimraf coverage && rimraf tests && rimraf lib",
+    "build": "npm run clean && npm run test && npm run build:esm && npm run build:cjs && npm run build:bundle",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --extensions '.js' --out-dir 'lib/esm' --source-maps",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --extensions '.js' --out-dir 'lib/cjs' --source-maps",
+    "build:bundle": "cross-env BABEL_ENV=esm rollup -c",
+    "publish:patch": "npm version patch && npm publish",
+    "publish:minor": "npm version minor && npm publish",
+    "publish:major": "npm version major && npm publish"
+  },
+  "files": [
+    "src",
+    "lib"
+  ],
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "exports": {
+    ".": {
+      "require": "./lib/cjs/index.js",
+      "import": "./lib/esm/index.js"
+    },
+    "./esm": "./lib/esm.js",
+    "./esm/min": "./lib/esm.min.js",
+    "./umd": "./lib/umd.js",
+    "./umd/min": "./lib/umd.min.js"
   },
   "repository": {
     "type": "git",
@@ -25,17 +49,22 @@
   },
   "homepage": "https://github.com/georgedenning/enum#readme",
   "devDependencies": {
+    "@babel/cli": "^7.17.10",
     "@babel/eslint-parser": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
     "babel-jest": "^28.1.1",
+    "cross-env": "^7.0.3",
     "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jest": "^26.5.3",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-security": "^1.5.0",
     "jest": "^28.1.1",
-    "prettier": "^2.7.1"
-  },
-  "main": "dist/enum.common.js",
-  "module": "dist/enum.esm.js"
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.75.7",
+    "rollup-plugin-terser": "^7.0.2"
+  }
 }
