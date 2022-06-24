@@ -3,11 +3,13 @@
 
 # Installation
 
+Install the package with npm:
+
 ```shell
 $ npm install @georgehdenning/enums
 ```
 
-# Usage
+Start using Enums in your project:
 
 ## ES6 Import
 
@@ -21,7 +23,9 @@ import Enum from '@georgehdenning/enums';
 const Enum = require('@georgehdenning/enums');
 ```
 
-## Functionality
+---
+
+# Usage
 
 ```js
 // index.js
