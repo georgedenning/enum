@@ -2,11 +2,10 @@
   "name": "@gden/enum",
   "description": "Register the Enum package to handle predefined constants in your project",
   "version": "0.0.1",
-  "private": false,
-  "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "clean": "rm -rf coverage && rm -rf tests/coverage && rm -rf dist/*.js*"
   },
   "repository": {
     "type": "git",
@@ -16,17 +15,13 @@
     "enum",
     "enums",
     "enumerated",
-    "enumerable"
+    "enumerable",
+    "javascript enum"
   ],
   "author": "George Denning <npmgden@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/georgedenning/enum/issues"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
   },
   "homepage": "https://github.com/georgedenning/enum#readme",
   "devDependencies": {
@@ -40,5 +35,7 @@
     "eslint-plugin-security": "^1.5.0",
     "jest": "^28.1.1",
     "prettier": "^2.7.1"
-  }
+  },
+  "main": "dist/enum.common.js",
+  "module": "dist/enum.esm.js"
 }
