@@ -3,7 +3,7 @@ import isNil from './helpers/isNil.js';
 import isString from './helpers/isString.js';
 import isNumber from './helpers/isNumber.js';
 
-export default class EnumEntry {
+export class EnumEntry {
     static _defaultOptions = {
         ignoreCase: false
     };
@@ -101,3 +101,5 @@ export default class EnumEntry {
         return this.value;
     }
 }
+
+export default EnumEntry;

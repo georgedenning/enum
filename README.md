@@ -1,37 +1,51 @@
 ![NPM License](https://img.shields.io/npm/l/@gden/enum?label=)
-![NPM Downloads](https://img.shields.io/npm/dw/@gden/enum?label=)
+
+<!-- ![NPM Downloads](https://img.shields.io/npm/dw/@gden/enum?label=) -->
 
 # Installation
 
-Install the package with npm:
+Using npm:
 
 ```shell
 npm install @gden/enum
 ```
 
-Start using Enums in your project:
-
-## ES6 Import
+Import the package in your ES6 project:
 
 ```js
-import Enum from '@gden/enum';
+import { Enum } from '@gden/enum';
 ```
 
-## Common JS
+or require it with CommonJS:
 
 ```js
-const Enum = require('@gden/enum');
+const { Enum } = require('@gden/enum');
 ```
 
 ---
 
 # Usage
 
+Optionally, you can register `Enum` to make it available on the `global` or `window` object:
+
 ```js
-// index.js
+/**
+ * @param {String} key - defaults to "Enum"
+ */
+Enum.register(key);
+```
 
-import Enum from '@gden/enum';
+After registration, you can use `Enum` anywhere in your project by accessing it through `global.Enum` or `window.Enum` or just `Enum`.
 
+## API
+
+Params
+
+```js
+
+```
+
+```js
 const Colour = new Enum(['Green', 'Blue', 'Yellow']);
 
 /**

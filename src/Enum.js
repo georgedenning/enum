@@ -5,7 +5,7 @@ import isNil from './helpers/isNil.js';
 
 import EnumEntry from './EnumEntry.js';
 
-export default class Enum {
+export class Enum {
     static _defaultOptions = {
         ignoreCase: false
     };
@@ -164,3 +164,5 @@ export default class Enum {
         };
     }
 }
+
+export default Enum;

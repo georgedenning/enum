@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","names":["Enum"],"sources":["../../src/index.js"],"sourcesContent":["import Enum from './Enum.js';\n\nexport default Enum;\n"],"mappings":";;;;;;;AAAA;;;;eAEeA,a"}
+{"version":3,"file":"index.js","names":[],"sources":["../../src/index.js"],"sourcesContent":["import Enum from './Enum.js';\n\nexport { Enum };\n"],"mappings":";;;;;;;;;;;;AAAA"}
