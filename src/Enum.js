@@ -16,7 +16,8 @@ export class Enum {
     static register(key = 'Enum') {
         if (typeof global !== 'undefined' && !global[key]) {
             global[key] = Enum;
-        } else if (typeof window !== 'undefined' && !window[key]) {
+        }
+        if (typeof window !== 'undefined' && !window[key]) {
             window[key] = Enum;
         }
     }
@@ -85,27 +86,38 @@ export class Enum {
             return;
         }
 
+        let found = false;
+
         if (EnumEntry.isEnumEntry(key)) {
-            if (key.key in this) {
-                return key;
+            if (this._options.ignoreCase) {
+                for (let property in this) {
+                    if (property.toLowerCase() === key.key.toLowerCase()) {
+                        return this[property];
+                    }
+                }
             } else {
-                throw new ReferenceError(`"${key.key}" is not a valid enum entry key`);
+                for (let property in this) {
+                    if (property === key.key) {
+                        return this[property];
+                    }
+                }
             }
+
+            throw new ReferenceError(`"${key.key}" is not a valid enum entry key`);
         }
 
         if (isString(key)) {
-            let enums = this.enums;
-
             if (this._options.ignoreCase) {
-                enums = this.getLowerCaseEnums();
-                key = key.toLowerCase();
+                found = this.enums.find(entry => entry.key.toLowerCase() === key.toLowerCase());
+            } else {
+                found = this.enums.find(entry => entry.key === key);
             }
 
-            if (!(key in this)) {
+            if (!found) {
                 throw new ReferenceError(`"${key}" is not a valid enum entry key`);
             }
 
-            return enums.find(entry => entry.key === key);
+            return found;
         }
 
         if (!this.enums.map(entry => entry.value).includes(key)) {
@@ -119,32 +131,22 @@ export class Enum {
      * @param {EnumEntry|String|Number} value
      */
     getKey(value) {
-        const entry = this.get(value);
-
-        if (!entry) {
+        try {
+            return this.get(value).key;
+        } catch (e) {
             throw new ReferenceError(`entry not found`);
         }
-
-        return entry.key;
     }
 
     /**
      * @param {EnumEntry|String|Number} value
      */
     getValue(value) {
-        const entry = this.get(value);
-
-        if (!entry) {
+        try {
+            return this.get(value).value;
+        } catch (e) {
             throw new ReferenceError(`entry not found`);
         }
-
-        return entry.value;
-    }
-
-    getLowerCaseEnums() {
-        return this.enums.map(entry => {
-            return { ...entry, key: entry.key.toLowerCase() };
-        });
     }
 
     toJSON() {

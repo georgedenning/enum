@@ -98,6 +98,8 @@ describe('EnumEntry _setOptions', () => {
         const entry = new EnumEntry('a', 0);
         entry._setOptions({});
         expect(entry._options).toStrictEqual(EnumEntry._defaultOptions);
+        entry._setOptions();
+        expect(entry._options).toStrictEqual(EnumEntry._defaultOptions);
     });
 
     test('setting the ignoreCase option sets options.ignoreCase', () => {
@@ -119,6 +121,10 @@ describe('EnumEntry has', () => {
     });
     test('is true when param is a string with the same entry value', () => {
         const entry = new EnumEntry('a', 0);
+        expect(entry.has('a')).toStrictEqual(true);
+    });
+    test('is true when param is a string with the same lowercase entry value', () => {
+        const entry = new EnumEntry('A', 0, { ignoreCase: true });
         expect(entry.has('a')).toStrictEqual(true);
     });
     test('is true when param is a string within the entry key', () => {
@@ -144,12 +150,20 @@ describe('EnumEntry is', () => {
         const entry = new EnumEntry('a', 0);
         expect(entry.is(entry)).toStrictEqual(true);
     });
+    test('is true when param is an EnumEntry with the same lowercase entry key', () => {
+        const entry = new EnumEntry('A', 0, { ignoreCase: true });
+        expect(entry.is({ key: 'a', value: 0 })).toStrictEqual(true);
+    });
     test('is false when param is an EnumEntry without the same entry key', () => {
         const entry = new EnumEntry('a', 0);
         expect(entry.is(new EnumEntry('b', 1))).toStrictEqual(false);
     });
     test('is true when param is a string with the same entry key', () => {
         const entry = new EnumEntry('a', 0);
+        expect(entry.is('a')).toStrictEqual(true);
+    });
+    test('is true when param is a string with the same lowercase entry key', () => {
+        const entry = new EnumEntry('A', 0, { ignoreCase: true });
         expect(entry.is('a')).toStrictEqual(true);
     });
     test('is false when param is a string without the same entry key', () => {

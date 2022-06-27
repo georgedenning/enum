@@ -76,6 +76,9 @@ export class EnumEntry {
      */
     is(key) {
         if (EnumEntry.isEnumEntry(key)) {
+            if (this._options.ignoreCase) {
+                return this.key.toLowerCase() === key.key.toLowerCase();
+            }
             return this.key === key.key;
         }
 

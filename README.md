@@ -22,9 +22,13 @@ or require it with CommonJS:
 const { Enum } = require('@gden/enum');
 ```
 
----
-
 # Usage
+
+```js
+import { Enum } from '@gden/enum';
+
+const Colour = new Enum(['Green', 'Blue', 'Yellow']);
+```
 
 Optionally, you can register `Enum` to make it available on the `global` or `window` object:
 
@@ -35,18 +39,55 @@ Optionally, you can register `Enum` to make it available on the `global` or `win
 Enum.register(key);
 ```
 
-After registration, you can use `Enum` anywhere in your project by accessing it through `global.Enum` or `window.Enum` or just `Enum`.
-
-## API
-
-Params
+# API
 
 ```js
-
+/**
+ * @param {Array|Object} entries
+ * @param {Object|String} options (optional)
+ */
+new Enum(entries, options);
 ```
 
+## Entries
+
+Every new instantiation of an Enum requires an array of strings or an object with key => value pairs.
+
+### Create a new Enum with an array:
+
 ```js
-const Colour = new Enum(['Green', 'Blue', 'Yellow']);
+new Enum(['Green', 'Blue', 'Yellow']);
+```
+
+### Create a new Enum with an object:
+
+```js
+new Enum({ Green: 0, Blue: 1, Yellow: 2 });
+```
+
+## Options
+
+Optionally, you can pass an options object to the constructor.
+
+```js
+const options = {
+    /**
+     * The name of the Enum
+     * @type String
+     */
+    name: undefined,
+    /**
+     * Case-insensitive access to Enum entries
+     * @type Boolean
+     */
+    ignoreCase: false
+};
+```
+
+## Examples
+
+```js
+const Colour = new Enum({ Green: 0, Blue: 1, Yellow: 2 });
 
 /**
  * Get the EnumEntry direct
@@ -65,6 +106,22 @@ Colour.get('Green');
  * @returns {EnumEntry}  { key: 'Green', value: 0 }
  */
 Colour.get(0);
+
+/**
+ * Get the EnumEntry key by calling `getKey` method
+ * @returns {String}  'Green'
+ */
+Colour.getKey('Green');
+// or
+Colour.getKey(0);
+
+/**
+ * Get the EnumEntry value by calling `getValue` method
+ * @returns {Number}  0
+ */
+Colour.getValue(0);
+// or
+Colour.getValue('Green');
 
 /**
  * Trying to access an EnumEntry that doesn't exist directly
