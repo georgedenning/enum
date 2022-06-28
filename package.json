@@ -31,6 +31,7 @@
     "./umd": "./lib/umd.js",
     "./umd/min": "./lib/umd.min.js"
   },
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/georgedenning/enum.git"
